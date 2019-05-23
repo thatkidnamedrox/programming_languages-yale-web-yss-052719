@@ -7,8 +7,9 @@ def reformat_languages(languages)
     languages[style].each do |lang, lang_info|
       new_hash[lang] = lang_info
       if new_hash[lang][:style] == nil
-        puts "okay"
+        new_hash[lang][:style] = []
       end
+      new_hash[lang][:style] << style
     end
   end
   puts new_hash.inspect
